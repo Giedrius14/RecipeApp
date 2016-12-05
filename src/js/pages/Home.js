@@ -1,6 +1,6 @@
 import React from "react";
 
-import Recipe from "../components/Recipe";
+import RecipeComponent from "../components/RecipeComponent";
 
 export default class Home extends React.Component {
   render() {
@@ -14,7 +14,7 @@ export default class Home extends React.Component {
       "Some recipe",
       "Some Other recipe",
       "Yet Another recipe",
-    ].map((title, i) => <Recipe key={i} title={title}/> );
+    ].map((title, i) => <RecipeComponent key={i} title={title}/> );
 
     console.log("home");
     return (
