@@ -1,5 +1,5 @@
 import React from "react";
-import IngredientComponent from "../components/IngredientComponent";
+import IngredientListComponent from "./ingredient/IngredientListComponent";
 
 export default class RecipeComponent extends React.Component {
     render() {
@@ -9,9 +9,7 @@ export default class RecipeComponent extends React.Component {
             <div class="col-md-4">
                 <h4>{recipe.name}</h4>
                 <p>{recipe.description}</p>
-                    {recipe.ingredients.map((val,i) =>
-                        <IngredientComponent key={i} ingredient={val}/>
-                    )}
+                <IngredientListComponent list={recipe.ingredients}/>
                 <a class="btn btn-default" href="#">More Info</a>
             </div>
         );
