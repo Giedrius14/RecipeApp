@@ -1,5 +1,6 @@
 import React from "react";
 import IngredientListComponent from "./ingredient/IngredientListComponent";
+import {Link } from "react-router";
 
 export default class RecipeComponent extends React.Component {
     render() {
@@ -10,7 +11,7 @@ export default class RecipeComponent extends React.Component {
                 <h4>{recipe.name}</h4>
                 <p>{recipe.description}</p>
                 <IngredientListComponent list={recipe.ingredients}/>
-                <a class="btn btn-default" href="#">More Info</a>
+                <Link class="btn btn-default" to="recipe" >More info</Link>
             </div>
         );
     }
