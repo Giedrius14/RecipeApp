@@ -2,7 +2,7 @@ import React from "react";
 import IngredientListComponent from "./ingredient/IngredientListComponent";
 import {Link } from "react-router";
 
-export default class RecipeComponent extends React.Component {
+export default class RecipeDetailComponent extends React.Component {
     render() {
         let recipe = this.props.recipe;
         console.log(recipe);
@@ -11,8 +11,7 @@ export default class RecipeComponent extends React.Component {
                 <h4>{recipe.name}</h4>
                 <p>{recipe.description}</p>
                 <IngredientListComponent list={recipe.ingredients}/>
-                <Link class="btn btn-default" to={'/recipe/'+ recipe.id} >More info</Link>
             </div>
         );
     }
-}
+}  

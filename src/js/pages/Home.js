@@ -1,22 +1,16 @@
 import React from "react";
-
 import RecipeComponent from "../components/RecipeComponent";
-import {Recipe} from "../model/Recipe";
+import RecipeService from "../services/Recipe-service"
 
 export default class Home extends React.Component {
-  render() {
+    render() {
+        let recipeService = new RecipeService();
+        let recipes = recipeService.getRecipes().map((recipe, i) => <RecipeComponent key={i} recipe={recipe}/>);
 
-      const recipes = [
-          new Recipe("pica","gaminimas",['tesla','suris','mesa']),
-          new Recipe("pica","gaminimas",['tesla','suris','mesa']),
-          new Recipe("pica","gaminimas",['tesla','suris','mesa'])
-      ].map((recipe, i) => <RecipeComponent key={i} recipe={recipe}/> );
-
-    console.log("home");
-    return (
-      <div>
-        <div class="row">{recipes}</div>
-      </div>
-    );
-  }
+        return (
+            <div>
+                <div class="row">{recipes}</div>
+            </div>
+        );
+    }
 }
